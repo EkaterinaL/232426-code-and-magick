@@ -182,24 +182,31 @@
 </template>
 <script>
   var fireballSize = 22;
-  var getFireballSpeed;
-  getFireballSpeed = function(left) {
-    if (left = true) {
-      return getFireballSpeed ? 5 : 2;
-  }
-  
+  var getFireballSpeed = function (left) {
+     if (left = true) {
+       return 5;
+     } else {
+       return 2;
+     }
+    //   // или так?
+      // return left === true ? 5 : 2;
+  };
+
   var wizardSpeed = 3;
   var wizardWidth = 70;
-  var getWizardHeight = function(height) {
-    return 1.337 * wizardWidth;
-  }
+  // перемернные выше лучше внутри функции писать или вне ее?
 
-  function getWizardX(width) {
+  var getWizardHeight = function() {
+    return 1.337 * wizardWidth;
+  };
+
+  function getWizardX (width) {
     return width / 2;
-  }
-  function getWizardY(height) {
+  };
+
+  function getWizardY (height) {
     return height * 2 / 3;
-  }
+  };
 </script>
 <script src="js/game.js"></script>
 
